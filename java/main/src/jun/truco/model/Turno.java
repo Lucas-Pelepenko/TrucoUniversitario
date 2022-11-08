@@ -10,21 +10,16 @@ public class Turno {
 		this.jogadores = j;	
 		posicao = 0;
 	}
-	
+
 	public Jogador vezJogador(){
-		if(posicao < jogadores.length){
-			Jogador j = jogadores[posicao];
-			posicao++;
-			return j;
-		}
-		return null;
+		Jogador j = jogadores[posicao];
+		return (posicao < jogadores.length) ? j : null;
 	}
+
 	public boolean hasnext(){
-		if(posicao >= jogadores.length){
-			return false;
-		}
-		return true;
+		return (posicao >= jogadores.length) ? true : false;
 	}
+
 	public Jogador next(){
 		if(posicao >= jogadores.length)return null;
 		Jogador j = jogadores[posicao];
